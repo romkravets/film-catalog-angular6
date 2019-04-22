@@ -1,16 +1,16 @@
 
-  <mat-grid-list cols="4" rowHeight="600px">
+  <mat-grid-list cols="4" rowHeight="600px" rowWidth="600px">
       <mat-grid-tile></mat-grid-tile>
       <mat-grid-tile colspan="2">
 
-          <mat-card class="example-card">
+          <mat-card class="example-card" *ngFor="let film of films">
               <mat-card-header>
-                <mat-card-title>Название фильма</mat-card-title>
+                <mat-card-title>{{film.name}}</mat-card-title>
               </mat-card-header>
-              <img mat-card-image src="https://www.yesserie.com/wp-content/uploads/2017/07/angular-JS.jpg" alt="Photo of a Shiba Inu">
+              <img mat-card-image [src]="film.imgUrl">
               <mat-card-content>
                   <details-inner>
-                      {{description}}
+                      {{film.description}}
                   </details-inner>
               </mat-card-content>
               <mat-card-actions>
