@@ -3,6 +3,7 @@ import { FilmService } from '../film.service';
 import { Films} from '../../models/Films';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: '.films',
   templateUrl: './films.component.html',
   styleUrls: ['./films.component.css']
@@ -10,6 +11,7 @@ import { Films} from '../../models/Films';
 export class FilmsComponent implements OnInit {
   films: object[];
 
+  // tslint:disable-next-line:no-inferrable-types
   description: string = 'Middle card description';
 
   constructor(public filmsService: FilmService) {
@@ -20,5 +22,5 @@ export class FilmsComponent implements OnInit {
     this.films = this.filmsService.getFilms();
     console.log(this.films);
   }
-  
+
 }
